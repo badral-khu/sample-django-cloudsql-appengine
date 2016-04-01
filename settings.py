@@ -75,7 +75,7 @@ if APP_ENGINE:
   DATABASES = {
       'default': {
           'ENGINE': 'django.db.backends.mysql',
-          'HOST': '/cloudsql/fifth-composite-657:test',
+          'HOST': '/cloudsql/your-project-name-here:your-cloud-sql-instance-name-here',
           'NAME': 'django_test',
           'USER': 'root',
       }
@@ -85,8 +85,8 @@ elif os.getenv('SETTINGS_MODE') == 'prod':
     # in production.
     DATABASES = {
         'default': {
-            'ENGINE': 'google.appengine.ext.django.backends.rdbms',
-            'INSTANCE': 'fifth-composite-657:test',
+            'ENGINE': 'django.db.backends.mysql',
+            'INSTANCE': 'your-cloud-sql-instance-IP-address-here',
             'NAME': 'django_test',
             'USER': 'root',
         }
